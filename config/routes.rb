@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  get "/all", controller: "products", action: "display_all_method"
+  get "/panettone", controller: "products", action: "panettone_method"
+  get "/figgy-pudding", controller: "products", action: "figgy_pudding_method"
 end
