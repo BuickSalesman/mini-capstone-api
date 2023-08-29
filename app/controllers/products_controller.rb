@@ -1,16 +1,11 @@
 class ProductsController < ApplicationController
-  def display_all_method
+  def index
     @products = Product.all
-    render json: @products
+    render :index
   end
 
-  def figgy_pudding_method
-    @figgy_pudding = Product.first
-    render json: @figgy_pudding
-  end
-
-  def panettone_method
-    @panettone = Product.last
-    render json: @panettone
+  def show
+    @product = Product.find_by(id: params[:id])
+    render :show
   end
 end
