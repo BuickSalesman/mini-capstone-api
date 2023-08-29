@@ -1,14 +1,5 @@
 class ProductsController < ApplicationController
   def display_all_method
-    render json:
-  end
-
-  def first_contact
-    @contact = Contact.first
-    render template: "contacts/show"
-  end
-
-  def display_all_method
     @products = Product.all
     render json: @products
   end
