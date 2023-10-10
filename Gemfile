@@ -71,4 +71,9 @@ group :test do
   gem "webdrivers"
 end
 
-gem 'rack-cors'
+gem "rack-cors"
+
+# Use ActiveModel has_secure_password
+gem "bcrypt", "~> 3.1.7"
+
+gem "jwt"

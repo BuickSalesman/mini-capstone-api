@@ -19,7 +19,7 @@ class ImagesControllerTest < ActionDispatch::IntegrationTest
 
   test "create" do
     assert_difference "Image.count", 1 do
-      post "/images.json", params: { url: "test", product_id: 10 }
+      post "/images.json", params: { url: "test", product_id: Product.first.id }
       assert_response 200
     end
 
@@ -37,7 +37,6 @@ class ImagesControllerTest < ActionDispatch::IntegrationTest
     data = JSON.parse(response.body)
     assert_equal "Updated url", data["url"]
     assert_equal product.product_id, data["product_id"]
-    assert_equal product.description, data["description"]
 
     patch "/images/#{product.id}.json", params: { url: "" }
     assert_response 422
